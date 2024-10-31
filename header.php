@@ -1,3 +1,10 @@
+<?php
+require "config.php";
+require "Model/Db.php";
+require "Model/categories.php";
+require "Model/item.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
