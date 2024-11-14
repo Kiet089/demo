@@ -1,14 +1,14 @@
 <?php
 include "header.php";
-if(isset($_GET['cate'])){
+if (isset($_GET['cate'])) {
     $cate = $_GET['cate'];
-}
-else{
+} else {
     header('location;index.php');
 }
-$getItemByCat = $item->getItemByCat($cate);
-$cateName = $item->getCatNameById($cate)[0]['name'];
-var_dump($cateName);
+// $getItemByCat = $item->getItemByCat($cate);
+// $cateName = $item->getCatNameById($cate)[0]['name'];
+$get3NewstItem = $item->getItemById($cate); //Xuất Các Thời Sự
+// var_dump($cateName);
 ?>
 <!-- News With Sidebar Start -->
 <div class="container-fluid mt-5 pt-3">
@@ -24,61 +24,61 @@ var_dump($cateName);
                     </div>
                     <div class="col-lg-6">
                         <div class="position-relative mb-3">
-                        <?php
-                                foreach($get3NewstItem as $value):
-                                    ?>
-                            <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
-                            <div class="bg-white border border-top-0 p-4">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                            <?php
+                            foreach ($get3NewstItem as $value):
+                            ?>
+                                <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p>
+                                <?php endforeach; ?>
                                 </div>
-                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
-                                    <?php endforeach; ?>
-                            </div>
-                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                    <small>John Doe</small>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
                                 </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
-                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="position-relative mb-3">
-                        <?php
-                        $get3NewstItem = $item->getItemById($cate+1);
-                                foreach($get3NewstItem as $value):
-                                    ?>
-                            <img class="img-fluid w-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
-                            <div class="bg-white border border-top-0 p-4">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                            <?php
+                            $get3NewstItem = $item->getItemById($cate + 1);
+                            foreach ($get3NewstItem as $value):
+                            ?>
+                                <img class="img-fluid w-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p>
                                 </div>
-                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
-                            </div>
-                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                    <small>John Doe</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
-                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
                                     <?php endforeach; ?>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-12 mb-3">

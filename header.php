@@ -13,17 +13,17 @@ $get3NewstItem = $item->getItemById(2); //Xuất Các Thời Sự
 
 
 foreach ($get3NewstItem as $value) {
-    echo $item->getCatNameById($value['category'])[0]['name'];
-    echo $value['category'] . ' ' . $value['name'];
+    //echo $item->getCatNameById($value['category'])[0]['name'];
+    //echo $value['category'] . ' ' . $value['name'];
 
 
-    echo $item->getCatNameById($value['category'])[0]['name']; //xuất các Thời Sự
+    // echo $item->getCatNameById($value['category'])[0]['name']; //xuất các Thời Sự
 
-    echo ($value['image']); //kiemtra
+    // echo ($value['image']); //kiemtra
 
 
 }
-var_dump($get3NewstItem);
+//var_dump($get3NewstItem);
 
 ?>
 <!DOCTYPE html>
